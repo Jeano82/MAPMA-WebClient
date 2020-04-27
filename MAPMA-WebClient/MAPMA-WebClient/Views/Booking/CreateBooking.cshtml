@@ -8,16 +8,14 @@
 <form method="post" action="@Url.Action("CreateBooking")">
     Medarbejder nr:<input type="text" name="EmployeeID" /><br /><br />
     Brugernavn : <input type="text" name="username" /><br /><br />
-    Escaperoom Id: <input type="text" name="escapeRoomID" value="@ViewBag.EscapeRoom.escapeRoomID" readonly /><br /><br />
-    
+    Escaperoom Id: <input type="text" name="escapeRoomID" value="@ViewBag.EscapeRoom.escapeRoomID" readonly /><br /><br />    
     <select data-bind="TimeSpan"  name="BookTime">
-        @foreach (var item in ViewBag.TimeList) {
+        @foreach (TimeSpan item in ViewBag.TimeList) {
             <option  value="@item" >@item</option >
         }
     </select><br /><br />
     Dato og tid : <input type="date" name="BDate"/><br /><br />
     Antal personer: <input type="text" name="AmountOfPeople" /><br /><br />
-
    <input class="Button" type="submit" value="book rum" />
 </form>
 
