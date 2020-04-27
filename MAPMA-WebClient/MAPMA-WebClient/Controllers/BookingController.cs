@@ -13,8 +13,10 @@ namespace MAPMA_WebClient.Controllers
 
         public ActionResult CreateBooking(int id)  {
             EscapeRoomService escs = new EscapeRoomService();            
-            EscRef.EscapeRoom es = escs.GetEscapeRoom(id);
-            ViewBag.EscapeRoom =  es;
+            EscRef.EscapeRoom es = escs.GetEscapeRoom(id);            
+            ViewBag.TimeList = es.AvalibleTimes;
+            ViewBag.EscapeRoom =  es;           
+           
             return View();
         }
         
